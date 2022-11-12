@@ -8,19 +8,24 @@ content.classList.add('results');
     
 resultsPanel.appendChild(content);
 
+const computerChoicePanel = document.querySelector('.computer-selection');
+
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3);
     switch(choice){
         case 0:
             console.log("computer choose rock");
+            computerChoicePanel.src = "/imgs/assets/Rock.PNG";
             return choice;
             break;
         case 1:
             console.log("computer choose paper");
+            computerChoicePanel.src = "/imgs/assets/Paper.PNG";
             return choice;
             break;
         case 2:
             console.log("computer choose scissors");
+            computerChoicePanel.src = "/imgs/assets/Scissors.PNG";
             return choice;
             break;
         default:

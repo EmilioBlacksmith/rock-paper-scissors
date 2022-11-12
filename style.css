@@ -28,8 +28,9 @@ body{
     height: 80vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    flex-grow: 1;
     
 }
 
@@ -41,11 +42,12 @@ button{
     justify-content: center;
 }
 
-img{
+.choices img{
     max-width: 50px;
     max-height: 50px;
     width: auto;
     margin: 0;
+    transition: opacity 0.5s;
 }
 
 .choices{
@@ -63,6 +65,53 @@ img{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 32px;
     align-items: center;
+}
+
+.human{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.computer .profile img{
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    margin: 0;
+}
+
+.computer .selection{
+    background: url(/imgs/assets/Computer\ Score.PNG) center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.computer .selection img{
+    max-width: 60%;
+    max-height: 60%;
+    min-width: 15%;
+    min-height: 15%;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.computer .selection p{
+    padding: 4px;
+    text-align: center;
+    margin: 0;
+    font-size: 100%;
 }
