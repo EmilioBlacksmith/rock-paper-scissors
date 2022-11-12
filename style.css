@@ -1,0 +1,68 @@
+html{
+    background: url(/imgs/squared-background.jpg) bottom center;
+    background-size:auto;
+    font-family: 'Amatic SC', cursive;
+}
+
+.header{
+    overflow: hidden;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.header a{
+    color: black;
+    text-decoration: none;
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+body{
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+button{
+    display: flex;
+    height: 75px;
+    width: 75px;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    max-width: 50px;
+    max-height: 50px;
+    width: auto;
+    margin: 0;
+}
+
+.choices{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    gap: 12px;
+    margin: 12px;
+}
+
+.computer{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

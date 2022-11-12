@@ -1,7 +1,12 @@
 let playerChoice;
-let playerChoiceFixed;
 let playerScore = 0,
     computerScore = 0;
+
+const resultsPanel = document.querySelector('.results');
+const content = document.createElement('div');
+content.classList.add('results');
+    
+resultsPanel.appendChild(content);
 
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3);
@@ -25,28 +30,30 @@ function getComputerChoice(){
     }
 }
 
-function playerSelection(choice){
-    let fixedCoice = choice.toLowerCase();
-    fixedCoice = fixedCoice.trim();
-    switch(fixedCoice)
+function playerSelection(choiceNum){
+    let computerChoice = getComputerChoice();
+    switch(choiceNum)
     {
-        case "rock":
+        case 0:
             console.log("player choose rock");
-            return 0;
+            playRound(choiceNum, computerChoice)
+            //return 0;
             break;
-        case "paper":
+        case 1:
             console.log("player choose paper");
-            return 1;
+            playRound(choiceNum, computerChoice)
+            //return 1;
             break;
-        case "scissors":
+        case 2:
             console.log("player choose scissors");
-            return 2;
+            playRound(choiceNum, computerChoice)
+            //return 2;
             break;
         default:
             console.log("incorrect value.");
-            playerChoice = prompt("Rock, Paper or Scissors:", "rock");
-            playerChoiceFixed = playerSelection(playerChoice);
-            return 3;
+            /*playerChoice = prompt("Rock, Paper or Scissors:", "rock");
+            playerChoiceFixed = playerSelection(playerChoice);*/
+            //return 3;
             break;            
     }
 }
@@ -89,8 +96,9 @@ function playRound(playerSelection, computerSelection){
         console.log("scissors and scissors is a tie");
     }
 
-    window.alert("----------------\nSCORES:\nPlayer: " + playerScore + "\nComputer: " + computerScore + "\n----------------");
-    console.log("----------------\nSCORES:\nPlayer: " + playerScore + "\nComputer: " + computerScore + "\n----------------");
+    checkEnd();
+
+    //window.alert("----------------\nSCORES:\nPlayer: " + playerScore + "\nComputer: " + computerScore + "\n----------------");
 }
 
 function game(){
@@ -126,4 +134,28 @@ function game(){
     }
 }
 
-game();
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const buttons = document.querySelectorAll('button');
+
+rock.addEventListener('click' , () => {
+    playerSelection(0);
+});
+paper.addEventListener('click' , () => {
+    playerSelection(1);
+});
+scissors.addEventListener('click' , () => {
+    playerSelection(2);
+});
+
+function checkEnd(){
+    if(playerScore >= 5 || computerScore >= 5){
+        for(let i = 0; i < buttons.length; i++){
+            buttons[i].style.display = 'none';
+            content.innerText = `G A M E  O V E R\nSCORES\nPlayer: ${playerScore}\nComputer: ${computerScore}`;
+        }
+    }
+}
+
+
