@@ -2,13 +2,8 @@ let playerChoice;
 let playerScore = 0,
     computerScore = 0;
 
-const resultsPanel = document.querySelector('.results');
-const content = document.createElement('div');
-content.classList.add('results');
-    
-resultsPanel.appendChild(content);
-
 const computerChoicePanel = document.querySelector('.computer-selection');
+const container = document.querySelector('.container');
 
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3);
@@ -106,39 +101,6 @@ function playRound(playerSelection, computerSelection){
     //window.alert("----------------\nSCORES:\nPlayer: " + playerScore + "\nComputer: " + computerScore + "\n----------------");
 }
 
-function game(){
-    window.alert("\\Welcome to Rock Paper and Scissors//");
-
-    for(let i = 0; i < 5; i++){
-        do{
-            playerChoice = prompt("Rock, Paper or Scissors:", "rock");
-            playerChoiceFixed = playerSelection(playerChoice);
-        }while(playerChoiceFixed > 3)
-        let computerChoice = getComputerChoice();
-        playRound(playerChoiceFixed, computerChoice);
-    }
-
-    console.log("----------------");
-    console.log("G A M E  O V E R");
-    console.log("----------------");
-    console.log("SCORES:");
-    console.log("Player: " + playerScore);
-    console.log("Computer: " + computerScore);
-    console.log("----------------");
-    
-    
-    if(playerScore > computerScore){
-        window.alert("PLAYER WON");
-        console.log("PLAYER WON");
-    }else if(playerScore === computerScore){
-        window.alert("It's a Tie!");
-        console.log("It's a Tie!");
-    }else{
-        window.alert("COMPUTER WON");
-        console.log("COMPUTER WON");
-    }
-}
-
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
@@ -158,8 +120,34 @@ function checkEnd(){
     if(playerScore >= 5 || computerScore >= 5){
         for(let i = 0; i < buttons.length; i++){
             buttons[i].style.display = 'none';
-            content.innerText = `G A M E  O V E R\nSCORES\nPlayer: ${playerScore}\nComputer: ${computerScore}`;
         }
+
+    let winner;
+
+    if(playerScore > computerScore){
+        winner = "PLAYER WON!";
+    }else if(playerScore === computerScore){
+        winner = "It's a Tie!";
+    }else{
+        winner = "COMPUTER WON!";
+    }
+
+    const resultsPanel = document.createElement('div');
+    resultsPanel.classList.add('results');
+    const content = document.createElement('div');        
+    resultsPanel.appendChild(content);
+    content.classList.add('content');
+
+    content.innerText = `G A M E  O V E R\nPlayer: ${playerScore}\nComputer: ${computerScore}\n${winner}`;
+
+    const buttonRestart = document.createElement('button');
+    buttonRestart.classList.add('restart');
+    buttonRestart.innerText = `Restart`;
+    buttonRestart.onclick = function(){
+        window.location.reload();
+    };
+    content.appendChild(buttonRestart);
+    container.appendChild(resultsPanel);
     }
 }
 
