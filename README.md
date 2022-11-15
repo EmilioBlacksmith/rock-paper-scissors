@@ -1,7 +1,7 @@
 # Rock Paper Scissors
 This is a Vanilla Javascript project of rock paper and scissors on the website.
 
-<img src="../imgs/teaser.gif">
+![teaser](https://user-images.githubusercontent.com/71019624/201982859-68a1dd94-1577-4b08-926f-76a61458cff2.gif)
 
 ## Project's Goal.
 The Goal of this project is:
