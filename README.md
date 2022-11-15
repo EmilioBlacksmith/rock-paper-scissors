@@ -1,5 +1,7 @@
 # Rock Paper Scissors
-This is a <b>Javascript</b> practive to do rock paper and scissors on the webpage.
+This is a Vanilla Javascript project of rock paper and scissors on the website.
+
+<img src="../imgs/teaser.gif">
 
 ## Project's Goal.
 The Goal of this project is:
