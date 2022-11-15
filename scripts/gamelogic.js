@@ -10,17 +10,17 @@ function getComputerChoice(){
     switch(choice){
         case 0:
             console.log("computer choose rock");
-            computerChoicePanel.src = "imgs/assets/Rock.PNG";
+            computerChoicePanel.src = "imgs/Rock.PNG";
             return choice;
             break;
         case 1:
             console.log("computer choose paper");
-            computerChoicePanel.src = "imgs/assets/Paper.PNG";
+            computerChoicePanel.src = "imgs/Paper.PNG";
             return choice;
             break;
         case 2:
             console.log("computer choose scissors");
-            computerChoicePanel.src = "imgs/assets/Scissors.PNG";
+            computerChoicePanel.src = "imgs/Scissors.PNG";
             return choice;
             break;
         default:
