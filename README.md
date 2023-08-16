@@ -1,7 +1,9 @@
+<a href="https://emilioblacksmith.github.io/rock-paper-scissors/"><img src="https://img.shields.io/website-up-down-green-red/http/emilioblacksmith.github.io/rock-paper-scissors/" /></a>
+
 # Rock Paper Scissors
 This is a Vanilla Javascript project of rock paper and scissors on the website.
 
-![teaser](https://user-images.githubusercontent.com/71019624/201982859-68a1dd94-1577-4b08-926f-76a61458cff2.gif)
+![preview](https://github.com/EmilioBlacksmith/rock-paper-scissors/assets/71019624/01a8841d-c2b5-40a3-bb34-8d5f170644cb)
 
 ## Project's Goal.
 The Goal of this project is:
